@@ -1,0 +1,42 @@
+<style>
+    table, th , td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-left: 20px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    .brain_bg {
+        background-image: url("../image/humanBrain.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 400px;
+        margin: 0px 0 0 0;
+        padding: 65px 0 0 0;
+    }
+</style>
+<div class="brain_bg">
+    <h1 style="text-align: center; font-size: 50px;"> Human Brain</h1>
+</div>
+<div id="right-content">
+    <div ng-controller="lobeDetails">
+        <!--<button ng-click="fingerDetails()">Click</button>-->
+        <table>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>ID</th>
+            </tr>
+            <tr ng-repeat="record in records">
+                <td>{{ $index + 1 }}</td>
+                <td> {{record.name}}</td>
+                <td> <a style="text-decoration: none; color: #333333" href="#">{{record.name_id}}</a> </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+body {
+    padding-top: 58px;
+    background-color: antiquewhite;
+}
+ul li {
+    margin: 5px 50px 0 ;
+}
+.navbar-inverse {
+    background-color:#5BCED8 ;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-color: black;
+    color:linen;
+    font-size: 15px;
+}
+.dropdown-menu {
+    background-color:whitesmoke;
+}
+.navbar-nav {
+    font-size:15px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    height: 600px;
+}
+.mi_bg {
+    background-image: url("../image/mi_1.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    height: 300px;
+}
+.mi_circle_img {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+.mi_container {
+    background-color: #9ADCF4;
+}
+.mi_wrapper {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: burlywood;
+}
+.mi_btn #mi_heading {
+    margin: 10px 0 0;
+    padding: 10px 50px;
+}
+#mi_pic {
+    padding: 50px 20px;
+}
+.btn_1 {
+    padding: 10px 0;
+}
+.mi_text {
+    margin: 10px 15px;
+    padding: 0 15px;
+}
+.col-sm-9 {
+    text-align: center;
+    padding: 15px;
+}
+.mi_img {
+    padding: 10px 0 10px 28px;
+}
+.detail {
+    border: 1px solid black;
+    background-color: infobackground;
+    display: none;
+}
+#about_row {
+    text-align: center;
+}
+.about {
+    background-color: bisque;
+    font-size: 1.2em;
+    padding: 25px 0 ;
+}
+.footer {
+    background-color:darkcyan;
+
+}
+.container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#icon {
+    font-size: 2em;
+    float: right;
+}

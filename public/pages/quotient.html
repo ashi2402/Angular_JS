@@ -1,0 +1,103 @@
+<style>
+    table, th , td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-left: 20px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    #wrapper{
+        width: 1200px;
+        margin: auto;
+
+        padding: inherit;
+        background-color: #dddddd;
+        height: auto;
+        overflow: auto;
+    }
+    #left-content {
+
+        width:30%;
+        margin-top: 10px;
+        display:inline-block;
+        float:left;
+        margin-bottom: 10px;
+        height: 100%;
+        min-height:100%;
+    }
+    #right-content {
+        width:60%;
+        display:inline-block;
+        float:left;
+        padding:0px 0px 0px 0px;
+
+        height: 100%;
+    }
+    .brain_bg {
+        background-image: url("../image/Quotient.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        height: 400px;
+        margin: 0px 0 0 0;
+        padding: 65px 0 0 0;
+    }
+</style>
+<div class="brain_bg">
+</div>
+
+<!--<div id="right-content">-->
+    <!--<div ng-controller="quotientDetails">-->
+        <!--&lt;!&ndash;<button ng-click="fingerDetails()">Click</button>&ndash;&gt;-->
+        <!--<table>-->
+            <!--<tr>-->
+                <!--<th>Index</th>-->
+                <!--<th>Name</th>-->
+                <!--<th>ID</th>-->
+            <!--</tr>-->
+            <!--<tr ng-repeat="record in records">-->
+                <!--<td>{{ $index + 1 }}</td>-->
+                <!--<td> {{record.name}} </td>-->
+                <!--<td> <a style="text-decoration: none; color: #333333" href="#">{{record.name_id}}</a> </td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    <!--</div>-->
+<!--</div>-->
+<div id="wrapper">
+    <div id="left-content">
+        <div ng-controller="quotientDetails">
+            <!--<button ng-click="fingerDetails()">Click</button>-->
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="record in records">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{record.name}}</td>
+                    <td><a href="/quotetype/:{{record.name_id}}"><button ng-click="addNewCompany({{record.name_id}})">Details</button></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="right-content">
+        <div ng-controller="quotientDetails">
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                </tr>
+                <tr ng-repeat="detail in details">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{detail.description}}</td>
+                </tr>
+            </table>
+            <!--<button ng-click="fingerDetails()">Click</button>-->
+        </div>
+    </div>
+</div>

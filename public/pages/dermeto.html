@@ -1,0 +1,81 @@
+<style>
+    table, th , td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-left: 20px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    #wrapper{
+        width: 1200px;
+        margin: auto;
+
+        padding: inherit;
+        background-color: #B0E8DE;
+        height: auto;
+        overflow: auto;
+    }
+    #left-content {
+
+        width:15%;
+        padding:3% 5% 0% 5%;
+        display:inline-block;
+        float:left;
+        background-color: #dddddd;
+        height: 100%;
+        min-height:100%;
+    }
+    #right-content {
+        width:75%;
+        display:inline-block;
+        float:left;
+        padding:10px 0px 0px 0px;
+        background-color: azure;
+        height: 100%;
+    }
+    #left-content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+    }
+
+    #left-content li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+
+    }
+</style>
+<div id="wrapper">
+    <p style="text-align: center">Dermeto</p>
+    <div id="left-content">
+        <ul>
+            <li><a href="#/history">History</a> </li>
+            <li><a href="#">FingerPrint Analysis</a> </li>
+            <li><a href="#">Brain & FingerPrint</a> </li>
+        </ul>
+    </div>
+    <div id="right-content">
+        <div ng-controller="fingerPrint">
+            <!--<button ng-click="fingerDetails()">Click</button>-->
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                </tr>
+                <tr ng-repeat="record in records">
+                    <td>{{ $index + 1 }}</td>
+                    <td> <a style="text-decoration: none; color: #333333" href="#">{{record.name}}</a> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

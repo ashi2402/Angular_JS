@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DMIT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body ng-app="myApp">
+
+<!--<h2>AngularJS Sample Application</h2>-->
+
+<div ng-controller="studentController">
+    <table border = "0">
+        <tr>
+            <td>Enter first name:</td>
+            <td><input type = "text" ng-model = "student.firstName"></td>
+        </tr>
+
+        <tr>
+            <td>Enter last name: </td>
+            <td><input type = "text" ng-model = "student.lastName"></td>
+        </tr>
+
+        <tr>
+            <td>Name: </td>
+            <td>{{student.fullName()}}</td>
+        </tr>
+    </table>
+    <input type="number" ng-model="number">
+    <button  ng-click="findSquare()">Square</button>
+    <div>{{answer}}</div>
+    <header>
+        <ul id="menu-list">
+            <li><a href="#/main">Home</a></li>
+            <li class="dropdown"><a class="dropbtn">Dermatoglyphics</a>
+                <div class="dropdown-content">
+                    <a href="#/main/history">History</a>
+                    <a href="#/main/fingerprint">FingerPrint</a>
+                    <a href="#/main/brain">Brain & fingerPrint</a>
+                </div>
+            </li>
+            <li class="dropdown"><a class="dropbtn">Multiple Intelligence</a>
+                <div class="dropdown-content">
+                    <a href="#/main/mi-history">History</a>
+                    <a href="#/main/human-brain">Human Brain</a>
+                    <a href="#/main/mi">MI</a>
+                    <a href="#/main/quotient">Quotient</a>
+                </div>
+            </li>
+            <li><a href="#/main/contact">Contact</a></li>
+        </ul>
+    </header>
+</div>
+<ng-view></ng-view>
+
+    <footer>
+        <div id="bottom">
+                <table style="width: 100%">
+                    <tr>
+                        <th style="text-align: center">DMIT</th>
+                        <th style="text-align: center">Contact </th>
+                        <th style="text-align: center">Social Media</th>
+                    </tr>
+                    <tr><td><a style="text-decoration: none; color: black" href="#/">About</a> </td><td><b>Address</b></td><td><a style="text-decoration: none; color: black" href="#">Facebook</a> </td></tr>
+                    <tr> <td><a style="text-decoration: none; color: black" href="#/history">Dermetoglyphics</a> </td><td>Head Office:</td><td><a style="text-decoration: none; color: black" href="#">LinkedIn</a> </td></tr>
+                    <tr> <td><a style="text-decoration: none; color: black" href="#/mi-history">Multiple-Intelligence</a> </td><td> Pune 4110001  <b>Ph.:</b>+919673008460</td><td><a style="text-decoration: none; color: black" href="#">YouTube</a> </td></tr>
+                    <tr></tr>
+                </table>
+            </div>
+    </footer>
+<script src="source.js"></script>
+<script src="controllers/studentController.js"></script>
+<script src="controllers/fingerPrintController.js"></script>
+<script src="controllers/lobeController.js"></script>
+<script src="controllers/quotientController.js"></script>
+<script src="controllers/multipleIntelligence.js"></script>
+</body>
+</html>
+

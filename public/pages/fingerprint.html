@@ -1,0 +1,104 @@
+<style>
+    table, th , td {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 5px;
+        margin-left: 20px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    #wrapper{
+        width: 1200px;
+        margin: auto;
+
+        padding: inherit;
+        background-color: #dddddd;
+        height: auto;
+        overflow: auto;
+    }
+    #left-content {
+
+        width:30%;
+        margin-top: 10px;
+        display:inline-block;
+        float:left;
+        margin-bottom: 10px;
+        height: 100%;
+        min-height:100%;
+    }
+    #right-content {
+        width:60%;
+        display:inline-block;
+        float:left;
+        padding:0px 0px 0px 0px;
+
+        height: 100%;
+    }
+    #left-content ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+    }
+
+    #left-content li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+
+    }
+    .bg-img{
+        height: 500px;
+        background-image: url("../image/finger_bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        margin: 0px 0 0 0;
+    }
+    .bg-img h1 {
+        text-align: center;
+        margin: auto;
+        padding-top: 200px;
+        font-size: 45px;
+    }
+</style>
+<div class="bg-img"><h1>FINGER PRINTS</h1></div>
+<div id="wrapper">
+    <div id="left-content">
+        <div ng-controller="fingerPrint">
+            <!--<button ng-click="fingerDetails()">Click</button>-->
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="record in records">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{record.name}}</td>
+                    <td><a href="/greet/:{{record.name_id}}"><button ng-click="addNewCompany({{record.name_id}})">Details</button></a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="right-content">
+        <div ng-controller="fingerPrint">
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Name</th>
+                </tr>
+                <tr ng-repeat="detail in details">
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{detail.name}}</td>
+                </tr>
+            </table>
+            <!--<button ng-click="fingerDetails()">Click</button>-->
+        </div>
+    </div>
+</div>

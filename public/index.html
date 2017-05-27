@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> <!-- load jquery via CDN -->
+    <title>DMIT</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // script for registration
+
+            $('#registerForm').submit(function (event) {
+                $('.btn-primary').prop('disabled', true);
+                var formData = {
+                    'firstname': $('input[name=firstname]').val(),
+                    'lastname': $('#lastName').val(),
+                    'username' : $('input[name=username]').val(),
+                    'password': $('input[name=password]').val()
+                };
+                $.ajax({
+                    type: 'post',
+                    url : '/register',
+                    data: formData,
+                    dataType :'json'
+                    //encode: true
+
+               }).done(function (data) {
+                    if(data.success){
+                        alert("You have signUp successfully");
+                    }
+                    else {
+                        alert(data.error + ". User already exist");
+                    }
+                }).always(function(data) {
+                    console.log(data);
+                });
+
+                event.preventDefault();
+                // Reset the Form
+               //  $('#registerForm').find('input:text', 'input:password').val('');
+                $("#registerForm").trigger("reset");
+                $('.btn-primary').prop('disabled', false);
+            });
+            // script for login
+//            $('#loginForm').submit(function (e) {
+//                $('.btn-primary').prop('disabled', true)
+//
+//            })
+
+        })
+
+
+
+
+    </script>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        #top{
+            text-align: center;
+            background-color:#9ADCF4;
+            height: 50px;
+            margin-top: -21px;
+        }
+        #bottom {
+            text-align: center;
+            background-color:#DBD892;
+            height: 150px;
+
+        }
+        h1 {
+            color: #000000;
+        }
+        #wrapper{
+            width: 1200px;
+            background-color: #B0E8DE;
+            overflow: hidden;
+            margin: auto;
+            padding: 10px;
+        }
+        #register-content {
+            float: left;
+            display: inline-block;
+            margin: auto;
+            padding-left: 50px;
+        }
+        #login-content {
+            float: left;
+            display: inline-block;
+            margin: auto;
+            padding-left:inherit;
+            width: 600px;
+            border-right: 1px solid black;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="top"><h1> Sign-Up & Sign-in </h1></div>
+<div id="wrapper">
+    <div id="login-content">
+        <h2>Sign-Up</h2>
+        <form name="form" id="registerForm" method="post">
+            <div class="form-group" >
+                <label for="firstName">First name</label>
+                <input type="text" name="firstname" id="firstName" class="form-control"  required />
+            </div>
+            <div class="form-group" >
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastname" id="lastName" class="form-control"  required />
+            </div>
+            <div class="form-group" >
+                <label for="username">Username</label>
+                <input type="text" name="username" id="user" class="form-control" required/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="pass" class="form-control" required />
+            </div>
+            <div class="form-actions">
+                <button type="submit"  class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+    <div id="register-content">
+        <h2>Sign-in</h2>
+        <form name="form" role="form" id="loginForm" method="post" action="/login">
+            <div class="form-group" >
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control" required/>
+            </div>
+            <div class="form-group" >
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control"  required />
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-success">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="bottom"></div>
+
+</body>
+</html>
